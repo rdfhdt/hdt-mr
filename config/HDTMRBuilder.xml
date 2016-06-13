@@ -1,0 +1,69 @@
+<configuration>
+
+  <property>
+    <name>global.path.base</name>
+    <value>.</value>
+    <description>Root directory</description>
+  </property>
+
+  <property>
+    <name>global.path.input</name>
+    <value>input</value>
+    <description>input path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.path.output</name>
+    <value>d</value>
+    <description>Dictionary output path / Triples input path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.path.output.delete</name>
+    <value>true</value>
+    <description>Whether to delete dictionary output path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.path.sample</name>
+    <value>s</value>
+    <description>Dictionary sample path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.path.sample.delete</name>
+    <value>true</value>
+    <description>Whether to delete dictionary sample path</description>
+  </property>
+
+  <property>
+    <name>job.triples.path.output</name>
+    <value>t</value>
+    <description>Triples output path</description>
+  </property>
+
+  <property>
+    <name>job.triples.path.output.delete</name>
+    <value>true</value>
+    <description>Whether to delete triples output path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.reducers</name>
+    <value>10</value>
+    <description>Number of reducers used by jobs</description>
+  </property>
+
+  <property>
+    <name>job.triples.reducers</name>
+    <value>10</value>
+    <description>Number of reducers used by jobs</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.sample.probability</name>
+    <value>0.000001</value>
+    <description>Sampler Probability</description>
+  </property>
+
+</configuration>

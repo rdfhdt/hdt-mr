@@ -1,0 +1,86 @@
+<configuration>
+
+  <property>
+    <name>job.dictionary.run</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>job.dictionary.sample.run</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>job.dictionary.sample.reducers</name>
+    <value>10</value>
+  </property>
+
+  <property>
+    <name>hdt.dictionary.build</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>job.triples.run</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>job.triples.sample.run</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>hdt.build</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>global.path.base</name>
+    <value>.</value>
+    <description>Root directory</description>
+  </property>
+
+  <property>
+    <name>global.path.input</name>
+    <value>lubm</value>
+    <description>input path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.path.output</name>
+    <value>dictionary</value>
+    <description>Dictionary output path / Triples input path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.path.output.delete</name>
+    <value>true</value>
+    <description>Whether to delete dictionary output path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.path.sample</name>
+    <value>dictionary_sample</value>
+    <description>Dictionary samples path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.path.sample.delete</name>
+    <value>true</value>
+    <description>Whether to delete dictionary samples path</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.reducers</name>
+    <value>10</value>
+    <description>Number of reducers used by jobs</description>
+  </property>
+
+  <property>
+    <name>job.dictionary.sample.probability</name>
+    <value>0.000001</value>
+    <description>Sampler Probability</description>
+  </property>
+
+</configuration>
