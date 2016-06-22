@@ -2,50 +2,47 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.rdfhdt</groupId>
   <artifactId>hdt-mr</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>2.0</version>
   <name>HDT MapReduce</name>
   <packaging>jar</packaging>
   
-  <parent>
-    <groupId>org.rdfhdt</groupId>
-    <artifactId>hdt-java-parent</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
-    <relativePath>../</relativePath>
-  </parent>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   
   <dependencies>
-  	<dependency>
-  		<groupId>org.rdfhdt</groupId>
-  		<artifactId>hdt-api</artifactId>
-  		<version>1.1.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  	<groupId>org.rdfhdt</groupId>
-  		<artifactId>hdt-java-core</artifactId>
-  		<version>1.1.1-SNAPSHOT</version>
-  	</dependency>
-	<dependency>
-		<groupId>org.apache.hadoop</groupId>
-		<artifactId>hadoop-common</artifactId>
-		<version>2.7.0</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.hadoop</groupId>
-		<artifactId>hadoop-core</artifactId>
-		<version>1.2.0</version>
-	</dependency>
-	<dependency>
-	  <groupId>com.hadoop.gplcompression</groupId>
-	  <artifactId>hadoop-lzo</artifactId>
-	  <version>0.4.15-gplextras5.0.0</version>
-	</dependency>
+    <dependency>
+      <groupId>org.rdfhdt</groupId>
+      <artifactId>hdt-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+    <groupId>org.rdfhdt</groupId>
+      <artifactId>hdt-java-core</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common</artifactId>
+      <version>2.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-core</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.hadoop.gplcompression</groupId>
+      <artifactId>hadoop-lzo</artifactId>
+      <version>0.4.15-gplextras5.0.0</version>
+    </dependency>
   </dependencies>
   <repositories>
-      <repository>
-		<id>spring-releases</id>
-		<url>http://repo.spring.io/libs-release-remote/</url>
-	  </repository>
-   </repositories>
+    <repository>
+	  <id>spring-releases</id>
+	  <url>http://repo.spring.io/libs-release-remote/</url>
+    </repository>
+  </repositories>
   
   <build>
 	<sourceDirectory>.</sourceDirectory>
