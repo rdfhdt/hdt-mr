@@ -377,9 +377,13 @@ public class HDTBuilderDriver {
 		TransientDictionarySection predicates = new TransientDictionarySection(this.conf.getSpec());
 		TransientDictionarySection objects = new TransientDictionarySection(this.conf.getSpec());
 
-		System.out.println("Shared section = " + this.conf.getSharedSectionPath());
+		
 
-		this.loadFromDir(shared, this.numShared, this.dictionaryFS, this.conf.getSharedSectionPath());
+		if (this.dictionaryFS.exists(this.conf.getSharedSectionPath())) {
+			System.out.println("Shared section = " + this.conf.getSharedSectionPath());
+			this.loadFromDir(shared, this.numShared, this.dictionaryFS, this.conf.getSharedSectionPath());
+		}
+			
 		this.loadFromDir(subjects, this.numSubjects, this.dictionaryFS, this.conf.getSubjectsSectionPath());
 		this.loadFromDir(predicates, this.numPredicates, this.dictionaryFS, this.conf.getPredicatesSectionPath());
 		this.loadFromDir(objects, this.numObjects, this.dictionaryFS, this.conf.getObjectsSectionPath());
@@ -702,7 +706,7 @@ public class HDTBuilderDriver {
 		return dictionary;
 	}
 
-	protected void saveDictionary(FourSectionDictionary dictionary, FileSystem fs, Path dictionaryPath) throws IOException {
+	protected void saveDictionary(FourSectionDictionary2 dictionary, FileSystem fs, Path dictionaryPath) throws IOException {
 		BufferedOutputStream output = new BufferedOutputStream(fs.create(dictionaryPath));
 		dictionary.save(output, new ControlInformation(), this.listener);
 		output.close();
