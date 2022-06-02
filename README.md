@@ -1,61 +1,68 @@
-========================
- HDT-MR Library.
-========================
+# HDT-MR Library
 
-Copyright (C) 2015, Jose M. Gimenez-Garcia, Javier D. Fernandez, Miguel A. Martinez-Prieto
-All rights reserved.
+Copyright (C) 2015, Jose M. Gimenez-Garcia, Javier D. Fernandez,
+Miguel A. Martinez-Prieto All rights reserved.
 
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version.
+This library is free software; you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation; either version 2.1 of the
+License, or (at your option) any later version.
 
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
-Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301
+USA
 
-Visit our Web Page: dataweb.infor.uva.es/projects/hdt-mr
+Visit our Web Page: https://dataweb.infor.uva.es/projects/hdt-mr
 
 Contacting the authors:
- Jose M. Gimenez-Garcia:    josemiguel.gimenez@alumnos.uva.es
- Javier D. Fernandez:       jfergar@infor.uva.es, javier.fernandez@wu.ac.at
- Miguel A. Martinez-Prieto: migumar2@infor.uva.es
+- Jose M. Gimenez-Garcia:    josemiguel.gimenez@alumnos.uva.es
+- Javier D. Fernandez:       jfergar@infor.uva.es, javier.fernandez@wu.ac.at
+- Miguel A. Martinez-Prieto: migumar2@infor.uva.es
 
 
-Overview
-=================
+## Overview
 
-HDT-MR improves the HDT-java library by introducing MapReduce as the computation model for large HDT serialization. HDT-MR performs in linear time with the dataset size and has proven able to serialize datasets up to 4.42 billion triples, preserving HDT compression and retrieval features.
+HDT-MR improves the HDT-java library by introducing MapReduce as the
+computation model for large HDT serialization. HDT-MR performs in
+linear time with the dataset size and has proven able to serialize
+datasets up to 4.42 billion triples, preserving HDT compression and
+retrieval features.
 
-HDT-java is a Java library that implements the W3C Submission (http://www.w3.org/Submission/2011/03/) of the RDF HDT (Header-Dictionary-Triples) binary format for publishing and exchanging RDF data at large scale. Its compact representation allows storing RDF in fewer space, while providing direct access to the stored information. See rdfhdt.org for further information.
-
-
+HDT-java is a Java library that implements the W3C Submission
+(http://www.w3.org/Submission/2011/03/) of the RDF HDT
+(Header-Dictionary-Triples) binary format for publishing and
+exchanging RDF data at large scale. Its compact representation allows
+storing RDF in fewer space, while providing direct access to the
+stored information. See rdfhdt.org for further information.
 
 HDT-MR provides three components:
 - iface: Provides an API to use HDT-MR, including interfaces and abstract classes 
 - src: Core library and command lines tools for using HDT-MR. It allows creating HDT files from RDF.
 - config: Examples of configuration files
-Note that the current distribution is an alpha version. Therefore, while this build has been tested, it is still subject to bugs and optimizations.
 
+Note that the current distribution is an alpha version. Therefore,
+while this build has been tested, it is still subject to bugs and
+optimizations.
 
+## Compiling
 
-
-Compiling
-=================
 Dependencies: 
-	* HDT-java (https://code.google.com/p/hdt-java/).
-	 *** src/org/rdfhdt/hdt includes those classes who has been modified/extended 
+- HDT-java (https://github.com/rdfhdt/hdt-java).
 
-Command line tools
-=================
+src/org/rdfhdt/hdt includes those classes who has been
+modified/extended
+
+## Command line tools
 
 The tool provides the following main command line tool:
 
+```
 Usage: hadoop HDTBuilderDriver [options]
   Options:
     -a, --awsbucket
@@ -132,36 +139,57 @@ Usage: hadoop HDTBuilderDriver [options]
        Path to dictionary job sample files. Relative to basedir
     -st, --samplestriples
        Path to triples job sample files. Relative to basedir
+```
 
-
-Usage example
-=================
+## Usage example
 
 After installation, run:
 
+```
 $ hadoop HDTBuilderDriver
-# This first try to read configuration parameters at the default config file (HDTMRBuilder.xml), using default values for those missing parameters. It reads RDF input data from the default 'input' folder and outputs the HDT conversion in 'output.hdt'
+```
 
+This first try to read configuration parameters at the default config
+file (HDTMRBuilder.xml), using default values for those missing
+parameters. It reads RDF input data from the default 'input' folder
+and outputs the HDT conversion in 'output.hdt'
+
+```
 $ hadoop HDTBuilderDriver -i mashup
-# Same previous example, but it reads RDF input data from the directory 'mashup'
+```
 
+Same previous example, but it reads RDF input data from the directory
+'mashup'
+
+```
 $ hadoop HDTBuilderDriver -c lubm-dictionary.xml -p 0.01
-# It uses 'lubm-dictionary.xml' as the configuration file. This file states that input data must be taken from the 'lubm' directory and it forces to compute only the HDT dictionary, which is written in 'dictionary/dictionary.hdt'
-# It uses 0.01 as the probability of using each element for sampling.
+```
+
+It uses 'lubm-dictionary.xml' as the configuration file. This file
+states that input data must be taken from the 'lubm' directory and it
+forces to compute only the HDT dictionary, which is written in
+'dictionary/dictionary.hdt'
+
+It uses 0.01 as the probability of using each element for sampling.
 
 
+```
 $ hadoop HDTBuilderDriver -c lubm-triples.xml -Rt 1 -Rts 1
-# It uses 'lubm-triples.xml' as the configuration file. This file states that input data must be taken from the 'lubm' directory and it forces to compute the HDT triples and the final HDT representation by taken the already computed dictionary in 'dictionary/dictionary.hdt'
-# It forces to use one reducer in both jobs.
+```
 
-License
-===============
+It uses 'lubm-triples.xml' as the configuration file. This file states
+that input data must be taken from the 'lubm' directory and it forces
+to compute the HDT triples and the final HDT representation by taken
+the already computed dictionary in 'dictionary/dictionary.hdt'
+
+It forces to use one reducer in both jobs.
+
+## License
 
 All HDT-MR content is licensed by Lesser General Public License.
 
-Acknowledgements
-================
+## Acknowledgements
 
-HDT-MR is a project partially funded by Ministerio de Economia y Competitividad, Spain: TIN2013-46238-C4-3-R, and Austrian Science Fund (FWF): M1720-G11.
-
-
+HDT-MR is a project partially funded by Ministerio de Economia y
+Competitividad, Spain: TIN2013-46238-C4-3-R, and Austrian Science Fund
+(FWF): M1720-G11.
