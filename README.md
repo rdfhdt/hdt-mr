@@ -48,7 +48,7 @@ Note that the current distribution is an alpha version. Therefore, while this bu
 Compiling
 =================
 Dependencies: 
-	* HDT-java (https://code.google.com/p/hdt-java/).
+	* HDT-java (https://github.com/rdfhdt/hdt-java).
 	 *** src/org/rdfhdt/hdt includes those classes who has been modified/extended 
 
 Command line tools
