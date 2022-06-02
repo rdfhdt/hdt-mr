@@ -18,7 +18,7 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301
 USA
 
-Visit our Web Page: dataweb.infor.uva.es/projects/hdt-mr
+Visit our Web Page: https://dataweb.infor.uva.es/projects/hdt-mr
 
 Contacting the authors:
 - Jose M. Gimenez-Garcia:    josemiguel.gimenez@alumnos.uva.es
