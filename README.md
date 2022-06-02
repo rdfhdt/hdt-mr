@@ -1,4 +1,4 @@
-# HDT-MR Library.
+# HDT-MR Library
 
 Copyright (C) 2015, Jose M. Gimenez-Garcia, Javier D. Fernandez,
 Miguel A. Martinez-Prieto All rights reserved.
@@ -21,9 +21,9 @@ USA
 Visit our Web Page: dataweb.infor.uva.es/projects/hdt-mr
 
 Contacting the authors:
- Jose M. Gimenez-Garcia:    josemiguel.gimenez@alumnos.uva.es
- Javier D. Fernandez:       jfergar@infor.uva.es, javier.fernandez@wu.ac.at
- Miguel A. Martinez-Prieto: migumar2@infor.uva.es
+- Jose M. Gimenez-Garcia:    josemiguel.gimenez@alumnos.uva.es
+- Javier D. Fernandez:       jfergar@infor.uva.es, javier.fernandez@wu.ac.at
+- Miguel A. Martinez-Prieto: migumar2@infor.uva.es
 
 
 ## Overview
